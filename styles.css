@@ -30,7 +30,8 @@ nav {
     align-items: center;
 }
 
-.first-half ul li button, .second-half button {
+.first-half ul li button,
+.second-half button {
     padding: 6px 20px;
     width: 160px;
     border-radius: 25px;
@@ -43,7 +44,8 @@ nav {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.first-half ul li button:hover, .second-half button:hover {
+.first-half ul li button:hover,
+.second-half button:hover {
     background-color: #B1A592;
     color: #333333;
 }
@@ -55,3 +57,221 @@ nav {
     width: 282px;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "a b b"
+        "a c c";
+    margin: 20px;
+    min-height: calc(100vh - 80px);
+    gap: 20px;
+}
+
+.box1,
+.box2,
+.box3 .left-card,
+.box3 .right-card {
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.box1 img,
+.box2 img,
+.box3 .left-card img,
+.box3 .right-card .image-section img {
+    transition: transform 0.3s ease;
+}
+
+.box1:hover img {
+    transform: scale(1.02);
+}
+
+
+.box2:hover img,
+.box3 .left-card:hover img,
+.box3 .right-card:hover .image-section img {
+    transform: scale(1.05);
+}
+
+.box1 {
+    grid-area: a;
+    background-color: #dfd6c5;
+}
+
+.box1 img {
+    width: 100%;
+    height: 75%;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.box2 {
+    grid-area: b;
+    background-color: #8e886d;
+}
+
+.box2 .divider {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.box2 .text-section {
+    flex: 1;
+}
+
+.box2 .image-section {
+    flex-shrink: 0;
+}
+
+.box2 img {
+    width: 500px;
+    height: 235px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.box3 {
+    grid-area: c;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0;
+    background-color: transparent;
+    min-height: 100%;
+}
+
+.box3 .left-card,
+.box3 .right-card {
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.box3 .left-card {
+    background-color: #916e58;
+}
+
+.box3 .right-card {
+    background-color: #b1a48e;
+}
+
+.box3 .left-card img {
+    width: 100%;
+    height: 168px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.box3 .right-card .divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-grow: 0;
+}
+
+.box3 .right-card .text-section {
+    flex: 1;
+}
+
+.box3 .right-card .image-section img {
+    width: 113px;
+    height: 113px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cta {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 24px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cta::after {
+    content: "→";
+    color: #323025;
+    width: 50px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.tag {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #666;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.box2 p {
+    margin-bottom: 8px;
+}
+
+.divider-line {
+    border: 0;
+    height: 1px;
+    background-color: #333;
+    margin: 10px 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a"
+            "b"
+            "c";
+    }
+
+    .box3 {
+        grid-template-columns: 1fr;
+    }
+}
