@@ -6,8 +6,52 @@
 }
 
 body {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    width: 100vw;
-    height: 100vh;
+    background-color: #1a1c19;
+    border: 8px solid #b2a592;
+    border-radius: 50px;
+    margin: 20px;
+    min-height: calc(100vh - 40px);
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px;
+    margin: 10px;
+    border: 2px solid #B1A592;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.first-half ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    align-items: center;
+}
+
+.first-half ul li button, .second-half button {
+    padding: 6px 20px;
+    width: 160px;
+    border-radius: 25px;
+    border: 1.5px solid #B1A592;
+    background-color: transparent;
+    color: #B1A592;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.first-half ul li button:hover, .second-half button:hover {
+    background-color: #B1A592;
+    color: #333333;
+}
+
+.first-half ul li:first-child button {
+    background-color: #323025;
+    color: #B1A592;
+    border: none;
+    width: 282px;
+}
+
